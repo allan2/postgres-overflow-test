@@ -5,6 +5,9 @@ edition = "2021"
 publish = false
 
 [dependencies]
-postgres = { version = "0.19", features = ["with-time-0_3", "with-chrono-0_4"] }
 time = "0.3"
 chrono = "0.4"
+## this will panic
+#postgres = { version = "0.19", features = ["with-time-0_3", "with-chrono-0_4"] }
+## PR branch no longer panics
+postgres = { git = "https://github.com/allan2/rust-postgres", branch = "time-overflow", features = ["with-time-0_3", "with-chrono-0_4"] }
